@@ -11,7 +11,7 @@ export const Footer = () => {
   return (
     <>
       <div className="flex px-4 py-6 bg-secondary flex-col md:items-center md:flex-row md:justify-between">
-        <span className="text-sm text-gray-700 block sm:text-center">
+        <span className="text-sm text-primary block sm:text-center">
           © 2023{" "}
           <Link to="https://dosink.com/">
             DosInk Marketing Tech. Co., Ltd.{" "}
