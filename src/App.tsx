@@ -11,8 +11,8 @@ const App = () => {
           <main className="flex-grow">
             <Outlet />
           </main>
-          <Footer />
         </div>
+        <Footer />
       </ThemeProvider>
     </>
   );
