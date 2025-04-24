@@ -12,7 +12,7 @@ export const Footer = () => {
     <>
       <div className="flex px-4 py-6 bg-secondary flex-col md:items-center md:flex-row md:justify-between">
         <span className="text-sm text-primary block sm:text-center">
-          © 2023{" "}
+          © 2025{" "}
           <Link to="https://dosink.com/">
             DosInk Marketing Tech. Co., Ltd.{" "}
           </Link>{" "}

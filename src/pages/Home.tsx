@@ -8,8 +8,8 @@ import { Link } from "react-router-dom";
 export const Home = () => {
   return (
     <>
-      <AuroraBackground className="h-[calc(100vh-100px)] relative z-0">
-        <div className="p-20 pt-0 text-primary flex items-center justify-center text-center z-10 relative">
+      <AuroraBackground className="min-h-[calc(100vh-100px)] relative z-0">
+        <div className="p-20 pt-0 text-primary flex items-center justify-center text-center z-10 relative mt-30">
           <p>
             <TypingAnimation
               as="span"

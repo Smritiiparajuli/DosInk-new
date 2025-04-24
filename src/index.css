@@ -41,6 +41,15 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --animate-aurora: aurora 8s ease-in-out infinite alternate;
   --animate-auroraBackground: auroraBackground 60s linear infinite;
+  --animate-line-shadow: line-shadow 30s linear infinite;
+  @keyframes line-shadow {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% -100%;
+    }
+  }
   @keyframes aurora {
     0% {
       backgroundposition: 0% 50%;
