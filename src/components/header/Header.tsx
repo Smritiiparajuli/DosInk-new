@@ -16,7 +16,7 @@ export const Header = () => {
 
   return (
     <>
-      <nav className="flex items-center justify-between p-3 lg:px-20 lg:py-4 h-[146px]">
+      <nav className="flex items-center justify-between p-3 lg:px-20 lg:py-4 h-[100px]">
         <NavLink to="/" className="flex items-center">
           {/* <img
             src="/images/dosink-logo-light.png"
