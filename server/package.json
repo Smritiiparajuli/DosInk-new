@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "heroku-postbuild": "cd client && npm install && npm run build",
-    "start": "node server/dist/index.js"
+    "start": "node server/dist/index.js",
+    "dev": "tsx watch ./src/index.ts",
+    "build": "tsc --build"
   },
   "keywords": [],
   "author": "",
