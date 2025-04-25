@@ -11,9 +11,12 @@ const PORT = process.env.PORT || 8000;
 const isProd = process.env.NODE_ENV === 'production';
 
 if (isProd) {
-  app.use(express.static(path.join(__dirname, '../client/dist')));
+  const staticPath = path.join(__dirname, '../../client/dist');
+  console.log('Serving static files from:', staticPath);
+  app.use(express.static(staticPath));
   app.get('*', (req: Request, res: Response) => {
-    res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+    console.log('Handling wildcard route for:', req.url);
+    res.sendFile(path.join(__dirname, '../../client/dist/index.html'));
   });
 }
 
