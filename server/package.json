@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "heroku-postbuild": "cd client && npm install && npm run build",
-    "postinstall": "cd server && npm install && npm run build",
     "start": "node server/dist/index.js"
   },
   "keywords": [],
