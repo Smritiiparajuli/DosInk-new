@@ -6,9 +6,9 @@ export const OurWork = () => {
   const { theme } = useTheme();
   return (
     <>
-      <div className="p-30 sm:pb-16 bg-white dark:bg-gray-900 min-h-[calc(100vh-100px)]">
+      <div className="p-10 sm:p-30 sm:pb-16 bg-white dark:bg-gray-900 min-h-[calc(100vh-100px)]">
         <div className="mx-auto max-w-screen-lg text-center">
-          <h2 className="mb-12 text-5xl sm:text-6xl tracking-tight font-semibold leading-tighter text-primary z-100">
+          <h2 className="mb-12 text-3xl sm:text-6xl tracking-tight font-semibold leading-tighter text-primary z-100">
             Delivering{" "}
             <LineShadowText
               className="italic"
