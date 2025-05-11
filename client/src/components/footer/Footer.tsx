@@ -20,7 +20,12 @@ export const Footer = () => {
         </span>
 
         <div className="flex mt-4 justify-start sm:justify-center md:mt-0 space-x-5 items-center">
-          <FaFacebook className="text-gray-500 hover:text-primary hover:cursor-pointer" />
+          <a
+            href="https://www.facebook.com/people/DosInk/61572214107827/"
+            target="_blank"
+          >
+            <FaFacebook className="text-gray-500 hover:text-primary hover:cursor-pointer" />
+          </a>
           <FaInstagram className="text-gray-500 hover:text-primary hover:cursor-pointer" />
           <FaYoutube className="text-gray-500 hover:text-primary hover:cursor-pointer" />
           <FaWhatsapp className="text-gray-500 hover:text-primary hover:cursor-pointer" />

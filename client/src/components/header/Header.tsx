@@ -6,6 +6,8 @@ import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 import { Button } from "../ui/button";
 import { DosinkLogo } from "../themes/DosinkLogo";
 import { ThemeButton } from "../themes/ThemeProvider";
+import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
+import { LoginForm } from "../forms/LoginForm";
 
 export const Header = () => {
   const [hamburger, setHamburger] = useState(true);
@@ -16,30 +18,31 @@ export const Header = () => {
 
   return (
     <>
-      <nav className="flex items-center justify-between p-3 lg:px-20 lg:py-4 h-[100px]">
+      <nav className="flex items-center justify-between p-3 lg:px-20 lg:py-4 h-[70px] md:h-[100px]">
         <NavLink to="/" className="flex items-center">
-          {/* <img
-            src="/images/dosink-logo-light.png"
-            alt="dosink-logo"
-            className="max-h-12 object-scale-down"
-          /> */}
-          <DosinkLogo className="max-h-12 object-scale-down" />
+          <DosinkLogo className="h-8 md:h-12 object-scale-down" />
         </NavLink>
 
-        <div className="hidden gap-14 md:flex uppercase font-bold hover:text-burntorange">
+        <div className="hidden md:items-center md:justify-around md:flex md:space-x-6 xl:space-x-15 uppercase font-bold text-primary">
           <NavLink to="/services">Services</NavLink>
+          <NavLink to="/our-work">Our Work</NavLink>
           <NavLink to="/team">Team</NavLink>
           <NavLink to="/contact">Contact Us</NavLink>
         </div>
 
         <div className="md:flex gap-2 hidden">
           <ThemeButton />
-          <NavLink to="/login">
-            <Button className="md:flex gap-2 cursor-pointer items-center px-6 py-2 hidden font-semibold">
-              Login
-              <LiaLongArrowAltRightSolid />
-            </Button>
-          </NavLink>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button className="md:flex gap-2 cursor-pointer items-center px-6 py-2 hidden font-semibold">
+                Login
+                <LiaLongArrowAltRightSolid />
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="p-0">
+              <LoginForm />
+            </DialogContent>
+          </Dialog>
         </div>
 
         <button className="flex items-center md:hidden" onClick={toggleNavbar}>
@@ -47,7 +50,7 @@ export const Header = () => {
         </button>
 
         <div
-          className={`fixed inset-0 flex flex-col justify-between z-50 bg-background md:hidden ${
+          className={`fixed inset-0 flex flex-col justify-between z-500 bg-background md:hidden ${
             hamburger ? "hidden" : ""
           }`}
         >
@@ -58,7 +61,7 @@ export const Header = () => {
                 className="flex items-center"
                 onClick={toggleNavbar}
               >
-                <DosinkLogo className="max-h-8 object-scale-down" />
+                <DosinkLogo className="h-8 md:h-12 object-scale-down" />
               </NavLink>
 
               <button
@@ -76,6 +79,13 @@ export const Header = () => {
                 onClick={toggleNavbar}
               >
                 Services
+              </NavLink>
+              <NavLink
+                to="/our-work"
+                className="m-3 block rounded-lg p-3 font-semibold hover:bg-secondary/90"
+                onClick={toggleNavbar}
+              >
+                Our Work
               </NavLink>
               <NavLink
                 to="/team"
