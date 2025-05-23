@@ -10,6 +10,7 @@ import App from "./App";
 import { Contact, Home, OurWork, Services, Team } from "./pages";
 import DefaultLayout from "./layouts/DefaultLayout";
 import HomeLayout from "./layouts/HomeLayout";
+import { TermsAndConditions } from "./pages/TermsAndConditions";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
           {
             path: "our-work",
             element: <OurWork />,
+          },
+          {
+            path: "terms-and-conditions",
+            element: <TermsAndConditions />,
           },
         ],
       },

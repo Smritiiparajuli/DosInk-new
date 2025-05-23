@@ -27,7 +27,9 @@ export const ContactForm = ({
   const form = useForm({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
-      name: "",
+      firstname: "",
+      lastname: "",
+      organization: "",
       email: "",
       mobile: "",
       details: "",
@@ -50,24 +52,45 @@ export const ContactForm = ({
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
               <div className="grid gap-6">
                 <div className="grid gap-6">
-                  <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Full Name</FormLabel>
-                        <FormControl>
-                          <Input
-                            id="name"
-                            type="text"
-                            placeholder="Enter your full name"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
+                  <div className="flex gap-2">
+                    <FormField
+                      control={form.control}
+                      name="firstname"
+                      render={({ field }) => (
+                        <FormItem className="w-full">
+                          <FormLabel>First Name</FormLabel>
+                          <FormControl>
+                            <Input
+                              id="name"
+                              type="text"
+                              placeholder="Enter your first name"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    <FormField
+                      control={form.control}
+                      name="lastname"
+                      render={({ field }) => (
+                        <FormItem className="w-full">
+                          <FormLabel>Last Name</FormLabel>
+                          <FormControl>
+                            <Input
+                              id="name"
+                              type="text"
+                              placeholder="Enter your last name"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
 
                   <FormField
                     control={form.control}
@@ -90,6 +113,25 @@ export const ContactForm = ({
 
                   <FormField
                     control={form.control}
+                    name="organization"
+                    render={({ field }) => (
+                      <FormItem className="w-full">
+                        <FormLabel>Your Organization</FormLabel>
+                        <FormControl>
+                          <Input
+                            id="name"
+                            type="text"
+                            placeholder="Enter your org name"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
                     name="mobile"
                     render={({ field }) => (
                       <FormItem>
@@ -98,7 +140,7 @@ export const ContactForm = ({
                           <PhoneInput
                             id="mobile"
                             placeholder="Enter a valid phone number"
-                            defaultCountry="NP"
+                            defaultCountry="TH"
                             {...field}
                           />
                         </FormControl>
@@ -125,8 +167,13 @@ export const ContactForm = ({
                     )}
                   />
 
+                  <div className="text-balance text-xs text-muted-foreground [&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:text-primary  ">
+                    By submitting, you agree to our{" "}
+                    <a href="/terms-and-conditions">Terms and Conditions.</a>
+                  </div>
+
                   <Button type="submit" className="w-full cursor-pointer">
-                    Send Message
+                    Submit
                   </Button>
                 </div>
               </div>

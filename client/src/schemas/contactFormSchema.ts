@@ -22,7 +22,9 @@ const phoneNumberSchema = z
   );
 
 export const contactFormSchema = z.object({
-  name: z.string().min(1, "Name is required"),
+  firstname: z.string().min(1, "First name is required"),
+  lastname: z.string().optional(),
+  organization: z.string().min(1, "Organization is required"),
   email: z.string().email("Invalid email address"),
   mobile: phoneNumberSchema,
   details: z.string(),

@@ -35,7 +35,7 @@ export const Header = () => {
           <Dialog>
             <DialogTrigger asChild>
               <Button className="md:flex gap-2 cursor-pointer items-center px-6 py-2 hidden font-semibold">
-                Login
+                Get a demo
                 <LiaLongArrowAltRightSolid />
               </Button>
             </DialogTrigger>
@@ -108,12 +108,13 @@ export const Header = () => {
             <div className="h-[1px] bg-gray-400"></div>
 
             <div className="mt-6 flex">
-              <NavLink to="/login" onClick={toggleNavbar}>
-                <Button className="flex gap-2 cursor-pointer items-center px-12 py-6 text-md font-semibold">
-                  Login
-                  <LiaLongArrowAltRightSolid />
-                </Button>
-              </NavLink>
+              <Button
+                className="flex gap-2 cursor-pointer items-center px-12 py-6 text-md font-semibold"
+                onClick={toggleNavbar}
+              >
+                Get a demo
+                <LiaLongArrowAltRightSolid />
+              </Button>
             </div>
           </div>
         </div>
