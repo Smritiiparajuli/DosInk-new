@@ -50,7 +50,7 @@ export const AuroraBackground = ({
         ></div>
       </div>
 
-      <div className="relative z-10 w-full min-h-screen">{children}</div>
+      <div className="relative z-10 w-full">{children}</div>
     </div>
   );
 };

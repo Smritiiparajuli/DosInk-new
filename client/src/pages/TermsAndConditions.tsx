@@ -39,10 +39,10 @@ const termsAndConditionsList = [
 
 export const TermsAndConditions = () => {
   return (
-    <div className="bg-secondary min-h-screen">
+    <div className="bg-secondary">
       <div className="max-w-4xl mx-auto px-4 py-16">
         <div className="bg-background rounded-2xl shadow-xl p-8">
-          <h1 className="text-3xl font-bold mb-8">Terms of Service</h1>
+          <h1 className="text-3xl font-bold mb-8">Terms and Conditions</h1>
 
           <section className="mb-8">
             <h2 className="text-xl font-semibold mb-4">
@@ -98,11 +98,11 @@ export const TermsAndConditions = () => {
                 </p>
               </div>
               <p className="bg-blue-50 p-4 rounded-lg">
-                DOSINK MARKETING TECH CO., LTD. ("we," "us," or "our") is
-                committed to protecting your privacy. This Privacy Policy
-                explains how we collect, use, and disclose your personal
-                information when you visit our website (the "Site") and use our
-                services as a technology consultant and Salesforce partner.
+                DOSINK MARKETING TECH CO., LTD. is committed to protecting your
+                privacy. This Privacy Policy explains how we collect, use, and
+                disclose your personal information when you visit our website
+                and use our services as a technology consultant and Salesforce
+                partner.
               </p>
 
               <div>
@@ -469,41 +469,9 @@ export const TermsAndConditions = () => {
                     Soi Inthamara 4, Samsennai, Phayathai, Bangkok 10400
                     Thailand
                     <br />
-                    contact@dosink.com
+                    dpo@dosink.com
                     <br />
                     +66 82 206 7085
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="text-xl font-semibold mb-4">3. Disclaimer</h2>
-            <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4">
-              <div className="flex">
-                <div className="flex-shrink-0">
-                  <svg
-                    className="h-5 w-5 text-yellow-400"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                </div>
-                <div className="ml-3">
-                  <p className="text-sm text-yellow-700">
-                    While we strive to keep content accurate and up to date,
-                    DOSINK MARKETING TECH CO. LTD. makes no warranties or
-                    representations of any kind regarding completeness,
-                    accuracy, reliability, or suitability of the information.
-                    Use of this site and reliance on any information is at your
-                    own risk. We are not liable for any loss or damage arising
-                    from the use of our website or services.
                   </p>
                 </div>
               </div>

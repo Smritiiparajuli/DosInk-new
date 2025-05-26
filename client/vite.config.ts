@@ -11,4 +11,17 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    proxy: {
+      "/api/web-to-lead": {
+        target: "https://webto.salesforce.com",
+        changeOrigin: true,
+        rewrite: (path) =>
+          path.replace(
+            /^\/api\/web-to-lead/,
+            "/servlet/servlet.WebToLead?encoding=UTF-8"
+          ),
+      },
+    },
+  },
 });

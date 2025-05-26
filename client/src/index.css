@@ -84,9 +84,7 @@
         350% 50%;
     }
   }
-  --font-apple:
-    "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
+  --font-roboto: "Roboto", sans-serif;
 }
 
 :root {
@@ -160,7 +158,7 @@
 
 @layer base {
   * {
-    @apply font-apple border-border outline-ring/50;
+    @apply font-roboto border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;

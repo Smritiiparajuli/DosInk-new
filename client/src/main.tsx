@@ -7,10 +7,11 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import App from "./App";
-import { Contact, Home, OurWork, Services, Team } from "./pages";
+import { Contact, Home, Work, Services, Expertise } from "./pages";
 import DefaultLayout from "./layouts/DefaultLayout";
 import HomeLayout from "./layouts/HomeLayout";
 import { TermsAndConditions } from "./pages/TermsAndConditions";
+import { Toaster } from "sonner";
 
 const router = createBrowserRouter([
   {
@@ -38,12 +39,12 @@ const router = createBrowserRouter([
             element: <Services />,
           },
           {
-            path: "team",
-            element: <Team />,
+            path: "expertise",
+            element: <Expertise />,
           },
           {
-            path: "our-work",
-            element: <OurWork />,
+            path: "work",
+            element: <Work />,
           },
           {
             path: "terms-and-conditions",
@@ -64,5 +65,6 @@ const rootElement = document.getElementById("root")!;
 createRoot(rootElement).render(
   <StrictMode>
     <RouterProvider router={router} />
+    <Toaster richColors />
   </StrictMode>
 );

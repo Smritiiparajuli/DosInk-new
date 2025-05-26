@@ -19,6 +19,9 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { PhoneInput } from "@/components/ui/phone-input";
 import { Textarea } from "../ui/textarea";
+// import axios from "axios";
+// import qs from "qs";
+import { toast } from "sonner";
 
 export const ContactForm = ({
   className,
@@ -38,18 +41,54 @@ export const ContactForm = ({
 
   const onSubmit = async (values: ContactFormData) => {
     try {
-      console.log(values);
+      const salesforceData = {
+        oid: "00Dd5000000SzDR",
+        retURL: "https://www.dosink.com",
+        debug: "1", // Remove in production
+        debugEmail: "shilash@dosink.com", // Remove in production
+        first_name: values.firstname,
+        last_name: values.lastname,
+        email: values.email,
+        company: values.organization,
+        mobile: values.mobile,
+        description: values.details,
+      };
+
+      // await axios.post("/api/web-to-lead", qs.stringify(salesforceData), {
+      //   headers: {
+      //     "Content-Type": "application/x-www-form-urlencoded",
+      //   },
+      // });
+
+      form.reset();
+      console.log(salesforceData);
+      toast.success("Your form has been submitted! ");
     } catch (error) {
+      toast.error("Failed to submit form. Please try again.");
       console.log("Error: ", error);
     }
   };
 
   return (
     <div className={cn("flex flex-col gap-6 ", className)} {...props}>
-      <Card className="border-none shadow-none rounded-none md:px-8 bg-white dark:bg-gray-900">
+      <Card className="border-none shadow-none rounded-none md:px-8 bg-white dark:bg-gray-900 mt-10">
         <CardContent>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+              {/* <input type="hidden" name="oid" value="00Dd5000000SzDR" />
+              <input
+                type="hidden"
+                name="retURL"
+                value="https://www.dosink.com"
+              />
+
+              <input type="hidden" name="debug" value="1" />
+              <input
+                type="hidden"
+                name="debugEmail"
+                value="shilash@dosink.com"
+              /> */}
+
               <div className="grid gap-6">
                 <div className="grid gap-6">
                   <div className="flex gap-2">
@@ -61,7 +100,7 @@ export const ContactForm = ({
                           <FormLabel>First Name</FormLabel>
                           <FormControl>
                             <Input
-                              id="name"
+                              id="firstname"
                               type="text"
                               placeholder="Enter your first name"
                               {...field}
@@ -80,7 +119,7 @@ export const ContactForm = ({
                           <FormLabel>Last Name</FormLabel>
                           <FormControl>
                             <Input
-                              id="name"
+                              id="lastname"
                               type="text"
                               placeholder="Enter your last name"
                               {...field}

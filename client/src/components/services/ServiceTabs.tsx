@@ -39,7 +39,7 @@ export const ServiceTabs = () => {
               {services.map((element) => (
                 <li key={element.id} className="w-1/2 sm:w-auto">
                   <div
-                    className={`block px-4 py-4 text-center sm:px-8 md:px-13 lg:px-18 xl:px-28 border-b-3 hover:border-primary ${
+                    className={`block px-4 py-4 text-center sm:px-8 md:px-13 lg:px-18 xl:px-28 border-b-3 cursor-pointer hover:border-primary ${
                       activeIndex === element.id
                         ? "border-primary"
                         : "border-transparent"

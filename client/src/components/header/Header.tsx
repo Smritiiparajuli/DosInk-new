@@ -6,8 +6,6 @@ import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 import { Button } from "../ui/button";
 import { DosinkLogo } from "../themes/DosinkLogo";
 import { ThemeButton } from "../themes/ThemeProvider";
-import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
-import { LoginForm } from "../forms/LoginForm";
 
 export const Header = () => {
   const [hamburger, setHamburger] = useState(true);
@@ -18,31 +16,25 @@ export const Header = () => {
 
   return (
     <>
-      <nav className="flex items-center justify-between p-3 lg:px-20 lg:py-4 h-[70px] md:h-[100px]">
+      <nav className="flex items-center justify-between p-3 lg:px-20 lg:py-4 h-[70px] md:h-[100px] fixed top-0 left-0 right-0 z-50 bg-background">
         <NavLink to="/" className="flex items-center">
           <DosinkLogo className="h-8 md:h-12 object-scale-down" />
         </NavLink>
 
         <div className="hidden md:items-center md:justify-around md:flex md:space-x-6 xl:space-x-15 uppercase font-bold text-primary">
           <NavLink to="/services">Services</NavLink>
-          <NavLink to="/our-work">Our Work</NavLink>
-          <NavLink to="/team">Team</NavLink>
-          <NavLink to="/contact">Contact Us</NavLink>
+          <NavLink to="/work">Work</NavLink>
+          <NavLink to="/expertise">Expertise</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
         </div>
 
         <div className="md:flex gap-2 hidden">
           <ThemeButton />
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button className="md:flex gap-2 cursor-pointer items-center px-6 py-2 hidden font-semibold">
-                Get a demo
-                <LiaLongArrowAltRightSolid />
-              </Button>
-            </DialogTrigger>
-            <DialogContent className="p-0">
-              <LoginForm />
-            </DialogContent>
-          </Dialog>
+
+          <Button className="md:flex gap-2 cursor-pointer items-center px-6 py-2 hidden font-semibold">
+            Get a demo
+            <LiaLongArrowAltRightSolid />
+          </Button>
         </div>
 
         <button className="flex items-center md:hidden" onClick={toggleNavbar}>
@@ -50,7 +42,7 @@ export const Header = () => {
         </button>
 
         <div
-          className={`fixed inset-0 flex flex-col justify-between z-500 bg-background md:hidden ${
+          className={`fixed inset-0 flex flex-col justify-between z-50 bg-background md:hidden ${
             hamburger ? "hidden" : ""
           }`}
         >
@@ -81,25 +73,25 @@ export const Header = () => {
                 Services
               </NavLink>
               <NavLink
-                to="/our-work"
+                to="/work"
                 className="m-3 block rounded-lg p-3 font-semibold hover:bg-secondary/90"
                 onClick={toggleNavbar}
               >
-                Our Work
+                Work
               </NavLink>
               <NavLink
-                to="/team"
+                to="/expertise"
                 className="m-3 block rounded-lg p-3 font-semibold hover:bg-secondary/90"
                 onClick={toggleNavbar}
               >
-                Team
-              </NavLink>{" "}
+                Expertise
+              </NavLink>
               <NavLink
                 to="/contact"
                 className="m-3 block rounded-lg p-3 font-semibold hover:bg-secondary/90"
                 onClick={toggleNavbar}
               >
-                Contact Us
+                Contact
               </NavLink>
             </div>
           </div>
@@ -119,6 +111,8 @@ export const Header = () => {
           </div>
         </div>
       </nav>
+      {/* Add padding to the body content to prevent overlap with fixed navbar */}
+      <div className="pt-[70px] md:pt-[100px]"></div>
     </>
   );
 };
