@@ -19,8 +19,8 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { PhoneInput } from "@/components/ui/phone-input";
 import { Textarea } from "../ui/textarea";
-// import axios from "axios";
-// import qs from "qs";
+import axios from "axios";
+import qs from "qs";
 import { toast } from "sonner";
 
 export const ContactForm = ({
@@ -44,8 +44,8 @@ export const ContactForm = ({
       const salesforceData = {
         oid: "00Dd5000000SzDR",
         retURL: "https://www.dosink.com",
-        debug: "1", // Remove in production
-        debugEmail: "shilash@dosink.com", // Remove in production
+        // debug: "1",
+        // debugEmail: "shilash@dosink.com",
         first_name: values.firstname,
         last_name: values.lastname,
         email: values.email,
@@ -54,11 +54,11 @@ export const ContactForm = ({
         description: values.details,
       };
 
-      // await axios.post("/api/web-to-lead", qs.stringify(salesforceData), {
-      //   headers: {
-      //     "Content-Type": "application/x-www-form-urlencoded",
-      //   },
-      // });
+      await axios.post("/api/web-to-lead", qs.stringify(salesforceData), {
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+      });
 
       form.reset();
       console.log(salesforceData);
@@ -75,20 +75,6 @@ export const ContactForm = ({
         <CardContent>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-              {/* <input type="hidden" name="oid" value="00Dd5000000SzDR" />
-              <input
-                type="hidden"
-                name="retURL"
-                value="https://www.dosink.com"
-              />
-
-              <input type="hidden" name="debug" value="1" />
-              <input
-                type="hidden"
-                name="debugEmail"
-                value="shilash@dosink.com"
-              /> */}
-
               <div className="grid gap-6">
                 <div className="grid gap-6">
                   <div className="flex gap-2">
