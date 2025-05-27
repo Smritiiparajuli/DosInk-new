@@ -1,6 +1,6 @@
 export const OurWork = () => {
   return (
-    <section className="p-10 min-[360px]:px-4 sm:px-10 md:px-20 mx-auto text-primary z-10 bg-white dark:bg-gray-900">
+    <section className="p-10 min-[360px]:px-4 sm:px-10 md:px-20 mx-auto text-primary z-10 bg-gradient-to-t from-[#adc7d6] to-white dark:bg-gradient-to-b dark:from-background dark:to-gray-900">
       <div className="container px-6 mx-auto">
         <div className="lg:flex lg:items-center">
           <div className="w-full space-y-12 lg:w-1/2 ">

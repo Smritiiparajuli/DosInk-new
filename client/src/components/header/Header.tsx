@@ -14,6 +14,11 @@ export const Header = () => {
     setHamburger(!hamburger);
   };
 
+  const linkClass = ({ isActive }: { isActive: boolean }) =>
+    `transition-colors duration-200 uppercase font-bold ${
+      isActive ? "text-[#CC5500]" : "text-primary"
+    } hover:text-[#E56717]`;
+
   return (
     <>
       <nav className="flex items-center justify-between p-3 lg:px-20 lg:py-4 h-[70px] md:h-[100px] fixed top-0 left-0 right-0 z-50 bg-background">
@@ -22,19 +27,35 @@ export const Header = () => {
         </NavLink>
 
         <div className="hidden md:items-center md:justify-around md:flex md:space-x-6 xl:space-x-15 uppercase font-bold text-primary">
-          <NavLink to="/services">Services</NavLink>
-          <NavLink to="/work">Work</NavLink>
-          <NavLink to="/expertise">Expertise</NavLink>
-          <NavLink to="/contact">Contact</NavLink>
+          <NavLink to="/services" className={linkClass}>
+            Services
+          </NavLink>
+          <NavLink to="/work" className={linkClass}>
+            Work
+          </NavLink>
+          <NavLink to="/expertise" className={linkClass}>
+            Expertise
+          </NavLink>
+          <NavLink to="/contact" className={linkClass}>
+            Contact
+          </NavLink>
         </div>
 
         <div className="md:flex gap-2 hidden">
           <ThemeButton />
 
-          <Button className="md:flex gap-2 cursor-pointer items-center px-6 py-2 hidden font-semibold">
-            Get a demo
-            <LiaLongArrowAltRightSolid />
-          </Button>
+          <a
+            href="https://loyaltyfrontend-bf6a154a1b45.herokuapp.com/"
+            target="_blank"
+          >
+            <Button
+              className="md:flex gap-2 cursor-pointer items-center px-6 py-2 hidden font-semibold rounded-full"
+              size={"lg"}
+            >
+              Get a demo
+              <LiaLongArrowAltRightSolid />
+            </Button>
+          </a>
         </div>
 
         <button className="flex items-center md:hidden" onClick={toggleNavbar}>
@@ -100,13 +121,18 @@ export const Header = () => {
             <div className="h-[1px] bg-gray-400"></div>
 
             <div className="mt-6 flex">
-              <Button
-                className="flex gap-2 cursor-pointer items-center px-12 py-6 text-md font-semibold"
-                onClick={toggleNavbar}
+              <a
+                href="https://loyaltyfrontend-bf6a154a1b45.herokuapp.com/"
+                target="_blank"
               >
-                Get a demo
-                <LiaLongArrowAltRightSolid />
-              </Button>
+                <Button
+                  className="flex gap-2 cursor-pointer items-center px-12 py-6 text-md font-semibold"
+                  onClick={toggleNavbar}
+                >
+                  Get a demo
+                  <LiaLongArrowAltRightSolid />
+                </Button>
+              </a>
             </div>
           </div>
         </div>

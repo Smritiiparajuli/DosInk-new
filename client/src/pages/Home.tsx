@@ -1,8 +1,8 @@
-import { HomeImageSection } from "@/components/home/HomeImageSection";
 import { HomeServices } from "@/components/home/HomeServices";
 import { AuroraTypingAnimation } from "@/components/magicui/aurora-typing-animation";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 import { Link } from "react-router-dom";
 
@@ -45,7 +45,7 @@ export const Home = () => {
           <div className="absolute pointer-events-none transition-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt"></div>
           <Link
             to="/contact"
-            className="relative inline-flex items-center justify-center px-4 py-4 min-[360px]:px-8 min-[360px]:py-4 text-sm min-[360px]:text-lg font-bold text-white transition-all duration-200 bg-gray-900 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 cursor-pointer"
+            className="relative inline-flex items-center justify-center px-4 py-4 min-[360px]:px-8 min-[360px]:py-4 text-sm min-[360px]:text-lg font-bold text-white transition-all duration-200 bg-gray-900 font-pj focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 cursor-pointer rounded-full"
             role="button"
           >
             Get Started
@@ -62,8 +62,9 @@ export const Home = () => {
         </Link>
       </div>
 
-      <HomeImageSection />
-      <HomeServices />
+      <Card className="mx-10 mb-10">
+        <HomeServices />
+      </Card>
     </>
   );
 };

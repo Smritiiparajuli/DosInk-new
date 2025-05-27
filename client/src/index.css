@@ -84,7 +84,7 @@
         350% 50%;
     }
   }
-  --font-roboto: "Roboto", sans-serif;
+  --font-lora: "Lora", serif;
 }
 
 :root {
@@ -158,7 +158,7 @@
 
 @layer base {
   * {
-    @apply font-roboto border-border outline-ring/50;
+    @apply font-lora border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;

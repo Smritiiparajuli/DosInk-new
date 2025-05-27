@@ -1,4 +1,4 @@
-import { FaFacebook, FaYoutube, FaLine } from "react-icons/fa";
+import { FaFacebook, FaLine } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 export const Footer = () => {
@@ -21,9 +21,13 @@ export const Footer = () => {
             <FaFacebook className="text-gray-500 hover:text-primary hover:cursor-pointer" />
           </a>
 
-          <FaYoutube className="text-gray-500 hover:text-primary hover:cursor-pointer" />
-
-          <FaLine className="text-gray-500 hover:text-primary hover:cursor-pointer" />
+          <a
+            href="https://line.me/R/ti/p/@662hlfav
+"
+            target="_blank"
+          >
+            <FaLine className="text-gray-500 hover:text-primary hover:cursor-pointer" />
+          </a>
         </div>
       </div>
     </>
