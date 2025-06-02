@@ -61,7 +61,6 @@ export const ContactForm = ({
       });
 
       form.reset();
-      console.log(salesforceData);
       toast.success("Your form has been submitted! ");
     } catch (error) {
       toast.error("Failed to submit form. Please try again.");
