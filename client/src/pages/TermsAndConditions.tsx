@@ -39,7 +39,7 @@ const termsAndConditionsList = [
 
 export const TermsAndConditions = () => {
   return (
-    <div className="bg-secondary">
+    <div className="bg-secondary min-h-screen">
       <div className="max-w-4xl mx-auto px-4 py-16">
         <div className="bg-background rounded-2xl shadow-xl p-8">
           <h1 className="text-3xl font-bold mb-8">Terms and Conditions</h1>

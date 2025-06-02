@@ -137,8 +137,6 @@ export const Header = () => {
           </div>
         </div>
       </nav>
-      {/* Add padding to the body content to prevent overlap with fixed navbar */}
-      <div className="pt-[70px] md:pt-[100px]"></div>
     </>
   );
 };

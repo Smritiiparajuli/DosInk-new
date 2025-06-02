@@ -5,9 +5,7 @@ const DefaultLayout = () => {
   return (
     <>
       <Header />
-      <main className="flex-grow">
-        <Outlet />
-      </main>
+      <Outlet />
     </>
   );
 };

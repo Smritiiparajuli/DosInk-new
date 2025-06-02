@@ -5,8 +5,12 @@ import { ThemeProvider } from "./context/ThemeContext";
 const App = () => {
   return (
     <ThemeProvider>
-      <Outlet />
-      <Footer />
+      <main className="flex flex-col min-h-screen">
+        <div className="flex-grow">
+          <Outlet />
+        </div>
+        <Footer />
+      </main>
     </ThemeProvider>
   );
 };

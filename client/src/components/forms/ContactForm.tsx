@@ -71,7 +71,7 @@ export const ContactForm = ({
 
   return (
     <div className={cn("flex flex-col gap-6 ", className)} {...props}>
-      <Card className="border-none shadow-none rounded-none md:px-8 bg-white dark:bg-gray-900 mt-10">
+      <Card className="border-none shadow-none rounded-lg md:px-8 bg-white dark:bg-gray-900">
         <CardContent>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">

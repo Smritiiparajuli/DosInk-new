@@ -12,6 +12,7 @@ import DefaultLayout from "./layouts/DefaultLayout";
 import HomeLayout from "./layouts/HomeLayout";
 import { TermsAndConditions } from "./pages/TermsAndConditions";
 import { Toaster } from "sonner";
+import { ContentContainer } from "./components/container/ContentContainer";
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,11 @@ const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <Home />,
+            element: (
+              <ContentContainer>
+                <Home />
+              </ContentContainer>
+            ),
           },
         ],
       },
@@ -32,23 +37,43 @@ const router = createBrowserRouter([
         children: [
           {
             path: "contact",
-            element: <Contact />,
+            element: (
+              <ContentContainer>
+                <Contact />
+              </ContentContainer>
+            ),
           },
           {
             path: "services",
-            element: <Services />,
+            element: (
+              <ContentContainer>
+                <Services />
+              </ContentContainer>
+            ),
           },
           {
             path: "expertise",
-            element: <Expertise />,
+            element: (
+              <ContentContainer>
+                <Expertise />
+              </ContentContainer>
+            ),
           },
           {
             path: "work",
-            element: <Work />,
+            element: (
+              <ContentContainer>
+                <Work />
+              </ContentContainer>
+            ),
           },
           {
             path: "terms-and-conditions",
-            element: <TermsAndConditions />,
+            element: (
+              <ContentContainer>
+                <TermsAndConditions />
+              </ContentContainer>
+            ),
           },
         ],
       },
